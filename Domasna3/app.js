@@ -39,7 +39,7 @@ app.post('/drzava', (req, res) => {
 app.put('/drzava/:id', (req, res) => {
   drzava.forEach(novoIme => {
     if (novoIme.id == req.params.id) {
-      if (req.body.name) {
+      if (req.body.ime) {
         novoIme.ime = req.body.ime;
       }
     }
