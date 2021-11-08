@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
 const categoryRouter = require('./routes/kategorii');
 const commentRouter = require('./routes/comments');
+const paymentsRouter = require('./routes/payments');
 
 
 var app = express();
@@ -28,6 +29,7 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 app.use('/category', categoryRouter);
 app.use('/comment', commentRouter);
+app.use('/payments', paymentsRouter);
 app.use((err, req, res, next) => {
     if (err.name === 'UnauthorizedError') {
       res.status(401).send({
