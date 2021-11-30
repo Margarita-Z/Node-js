@@ -42,7 +42,7 @@ import { API_BASE_URL } from '../../constants/apiConstants';
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputFirstName1">First Name</label>
                     <input type="text"
-                        name="FirstName"
+                        
                         className="form-control"
                         id="FirstName"
                         aria-describedby="FirstNameHelp"
@@ -54,7 +54,7 @@ import { API_BASE_URL } from '../../constants/apiConstants';
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputLastName1">Last Name</label>
                     <input type="text"
-                        name="LastName"
+                        
                         className="form-control"
                         id="LastName"
                         aria-describedby="LastNameHelp"
@@ -66,7 +66,7 @@ import { API_BASE_URL } from '../../constants/apiConstants';
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputEmail1">Email address</label>
                     <input type="email"
-                        name="email"
+                        
                         className="form-control"
                         id="email"
                         aria-describedby="emailHelp"
@@ -79,7 +79,7 @@ import { API_BASE_URL } from '../../constants/apiConstants';
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password"
-                        name="password"
+                        
                         className="form-control"
                         id="password"
                         placeholder="Password"

@@ -13,6 +13,13 @@ class Nav extends Component {
                 <li className="nav-item">
                     <a className="nav-link" href="/login">Login</a>
                 </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/allPost">Blog Posts</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link" href="/createPost">Create Post</a>
+                </li>
+
             </ul>
         )
     };
