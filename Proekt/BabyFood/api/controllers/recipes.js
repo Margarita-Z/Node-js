@@ -26,7 +26,7 @@ module.exports = {
       const lunch = await Recipe.find({ 'category': 'Lunch' });
       const diner = await Recipe.find({ 'category': 'Diner' });
 
-      const food = {breckFast, brunch, lunch, diner};
+      const food = { breckFast, brunch, lunch, diner };
 
       res.send({
         error: false,
@@ -41,22 +41,21 @@ module.exports = {
     }
   },
   homePage: async (req, res) => {
-   try {
-    const limitNumber = 3;
-    const freshNew = await Recipe.find({}).sort({createdAt: -1}).limit(limitNumber);
-    const mostPopulare = await Recipe.find({}).sort({review: -1}).limit(limitNumber);
-    res.send({
-      error: false,
-      message: 'Home page',
-      freshNew: freshNew,
-      mostPopulare: mostPopulare
-    });
-  } catch (error) {
-    res.send({
-      error: true,
-      message: error.message
-    })
-  }  
+    try {
+      const freshNew = await Recipe.find({}).sort({ createdAt: -1 }).limit(3);
+      const mostPopulare = await Recipe.find({}).sort({ review: -1 }).limit(6);
+      res.send({
+        error: false,
+        message: 'Home page',
+        freshNew: freshNew,
+        mostPopulare: mostPopulare
+      });
+    } catch (error) {
+      res.send({
+        error: true,
+        message: error.message
+      })
+    }
   },
   updateRecipe: async (req, res) => {
     try {
@@ -80,7 +79,7 @@ module.exports = {
 
       res.status(201).send({
         error: false,
-        message: 'Has just created a new recipe from !',
+        message: 'Has just created a new recipe !',
         recipe: recipe
       });
     } catch (error) {
@@ -99,23 +98,23 @@ module.exports = {
     }
   },
   view: async (req, res) => {
-      try {
-        const recipe = await Recipe.findById(req.params.id)
-       await Recipe.findOneAndUpdate(req.params.id);
-        recipe.review += 1;
-        recipe.save()
-    
-         res.send({
-          error: false,
-          message: `This recipe was visited `,
-          recipe: recipe
-        });
-      
-     } catch (error) {
-        res.send({
-          error: true,
-          message: error.message
-        });
-      }
+    try {
+      const recipe = await Recipe.findById(req.params.id)
+      await Recipe.findOneAndUpdate(req.params.id);
+      recipe.review += 1;
+      recipe.save()
+
+      res.send({
+        error: false,
+        message: `This recipe was visited `,
+        recipe: recipe
+      });
+
+    } catch (error) {
+      res.send({
+        error: true,
+        message: error.message
+      });
     }
+  }
 }
