@@ -1,6 +1,8 @@
 import React from "react";
 import MyHeader from "../MyHeader";
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
+import { amber } from '@mui/material/colors';
+import Icon from '@mui/material/Icon';
 
 function MyRecipes() {
     return (
@@ -9,10 +11,10 @@ function MyRecipes() {
             <Container>
                 <Row>
                     <Col>
-                        <p>My recipes</p>
+                        <h3>My recipes</h3>
                     </Col>
-                    <Col>
-                        <Button variant="warning" href='/createRecipe'><i class="bi bi-plus-lg"></i></Button>
+                    <Col  align = 'end'>
+                    <Button variant="link" href='/createRecipe' ><Icon sx={{ color: amber[700] }}>add_circle</Icon></Button>
                     </Col>
                 </Row>
                 <Row>
@@ -31,12 +33,12 @@ function MyRecipes() {
                             <tbody>
                                 <tr>
 
-                                    <td>Table cell</td>
+                                    <td><a href = '/createRecipe' style= {{textDecoration: 'none'}}>Table cell</a></td>
                                     <td>Table cell</td>
                                     <td>Table cell</td>
                                     <td colSpan='3'></td>
                                     <td></td>
-                                    <td style={{ textAlign: "right" }}><i class="bi bi-trash" ></i></td>
+                                    <td style={{ textAlign: "right" }}> <Button variant="link" style={{color: 'gray'}}><i class="bi bi-trash" ></i></Button></td>
                                 </tr>
 
                             </tbody>

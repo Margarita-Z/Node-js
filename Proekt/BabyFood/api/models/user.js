@@ -15,8 +15,8 @@ const userSchema = mongoose.Schema({
     unique: true
   },
   birthday: {
-    type: String,
-    required: true
+    type: Date,
+    default: Date.now()
   },
   password: {
     type: String,

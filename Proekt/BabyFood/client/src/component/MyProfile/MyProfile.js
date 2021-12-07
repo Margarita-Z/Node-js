@@ -13,13 +13,19 @@ function MyProfile() {
             <MyHeader />
             <div className='formaProfile'>
             <Container>
-                <p>My Profile</p>
-                
-                    <Row>
+                 <Row>
+                 <Row>
+                        <Col>
+                            <h3>My Profile</h3>
+                        </Col>
+                    </Row>
                         <Col xs={6} md={4}>
-                            <Image src="https://as1.ftcdn.net/v2/jpg/00/32/70/74/500_F_32707441_GB0Hdzkts7o0dkYBeSAj7wzuf3RoDLaJ.jpg" roundedCircle style={{ width: '171px' }, { height: '180px' }} />
                             <Col>
-                                <Button variant="outline-secondary">CHANGE AVATAR</Button>
+                            <Image src="https://www.pinclipart.com/picdir/big/133-1331433_free-user-avatar-icons-happy-flat-design-png.png" roundedCircle style={{ width: '171px' }, { height: '180px' }} />
+                            </Col>
+                            <br/>
+                            <Col>
+                           <Button variant="outline-secondary">CHANGE AVATAR</Button>
                             </Col>
                         </Col>
                         <Col xs={12} md={8}>
@@ -47,13 +53,10 @@ function MyProfile() {
                                             </Form.Group>
                                         </Col>
                                         <Col>
-                                            <Form.Group as={Col} controlId="formGridState">
-                                                <Form.Label>Birthday</Form.Label>
-                                                <Form.Select defaultValue="Choose...">
-                                                    <option></option>
-                                                    <option>...</option>
-                                                </Form.Select>
-                                            </Form.Group>
+                                            <Form.Group as={Col} controlId="formGridDOB">
+                                            <Form.Label>Birthday</Form.Label>
+                                            <Form.Control type="date" />
+                                        </Form.Group>
                                         </Col>
                                     </Row>
                                     <Row>

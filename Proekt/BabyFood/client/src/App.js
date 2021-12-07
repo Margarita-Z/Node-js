@@ -1,7 +1,5 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Route,Routes} from 'react-router-dom'
+import { Route,Routes, BrowserRouter} from 'react-router-dom'
 import Footer from './component/Footer';
 import HomePage from './component/HomePage/HomePage';
 import Login from './component/Login/Login';
@@ -20,7 +18,7 @@ export function App () {
   
     return (
         <div className="App">
-         
+         <BrowserRouter>
           <Routes>
             <Route path = '/' element = {<HomePage/>} />
             <Route path = '/login' element = {<Login/>} />
@@ -34,6 +32,7 @@ export function App () {
             <Route path = '/createRecipe' element = {<CreateRecipe/>} />
           </Routes>
           <Footer />
+          </BrowserRouter>
         </div>
       
 

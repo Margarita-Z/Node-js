@@ -2,6 +2,9 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import MyHeader from "../MyHeader";
 import { Image, Button, Form } from "react-bootstrap";
+import { Circle } from "react-bootstrap-icons";
+import { amber } from '@mui/material/colors';
+import Icon from '@mui/material/Icon';
 
 function CreateRecipe() {
     return (
@@ -10,20 +13,21 @@ function CreateRecipe() {
             <Container>
             <Row>
                     <Col>
-                        <p>My recipes</p>
+                        <h3>My recipes</h3>
                     </Col>
-                    <Col>
-                        <Button variant="warning" href='/myRecipes'><i class="bi bi-arrow-90deg-left"></i></Button>
+                    <Col align = 'end'>
+                    <Button variant="link" href='/myRecipes' ><Icon sx={{ color: amber[700] }}>undo-circle</Icon></Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={4} md={2}>
                         <Col>
-                        Resipe Image
+                        <p>Resipe Image</p>
                         </Col>
                         <Col>
-                        <Image src="https://as1.ftcdn.net/v2/jpg/00/32/70/74/500_F_32707441_GB0Hdzkts7o0dkYBeSAj7wzuf3RoDLaJ.jpg" rounded style={{ width: '171px' }, { height: '180px' }} />
+                        <Image src="https://www.pinclipart.com/picdir/big/133-1331433_free-user-avatar-icons-happy-flat-design-png.png" roundedCircle style={{ width: '171px' }, { height: '180px' }} />
                         </Col>
+                        <br/>
                         <Col>
                             <Button variant="outline-secondary">UPLOAD IMAGE</Button>
                         </Col>
@@ -64,7 +68,7 @@ function CreateRecipe() {
                     <Col xs={6} md={4}>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Recipe</Form.Label>
-                                <Form.Control as="textarea" rows={3} />
+                                <Form.Control as="textarea" rows={10} />
                             </Form.Group>
                     </Col>
                 </Row>
